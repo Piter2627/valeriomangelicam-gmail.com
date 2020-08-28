@@ -53,12 +53,11 @@ in-app install flow:
    element to start the in-app installation flow.
 
 {% Aside %}
-  The `beforeinstallprompt` event, and the `appinstalled` event have been moved
-  from the Web App Manifest spec to their own
+  The `beforeinstallprompt` event, and the `appinstalled` event have been [moved
+  from the Web App Manifest spec](https://github.com/w3c/manifest/pull/836) to their own
   [incubator](https://github.com/WICG/beforeinstallprompt). The Chrome team
   remains committed to supporting them, and has no plans to remove or deprecate
-  support. **web.dev continues to recommend using them to provide a customized
-  install experience.**
+  support.
 {% endAside %}
 
 ### Listen for the `beforeinstallprompt` event {: #beforeinstallprompt }
