@@ -1,17 +1,17 @@
 ---
 title: 'Hands-on with Portals: seamless navigation on the web'
 subhead: |
-  Learn how the proposed Portals API can improve your navigation UX.
+  Learn how the  Portals API can improve your navigation user experience.
 date: 2019-05-06
-updated: 2020-07-13
+updated: 2021-01-28
 authors:
   - uskay
 hero: hero.png
 alt: A logo of Portals
 description: |
-  The newly proposed Portals API helps keep your front-end simple while allowing seamless navigations
+  The Portals API helps keep your front-end simple while allowing seamless navigations
   with custom transitions. In this article, get hands-on experience using
-  Portals to improve user experience across your site.
+  Portals to improve the user experience across your site.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-7680889164480380927
 tags:
@@ -26,12 +26,9 @@ Making sure your pages load fast is key to delivering a good user experience.
 But one area we often overlook is page transitions—what our users see when
 they move between pages.
 
-A new web platform API proposal called [Portals](https://github.com/WICG/portals) aims to
+A new web platform API called [Portals](https://github.com/WICG/portals) aims to
 help with this by streamlining the experience as users navigate _across_ your
 site.
-
-Portals are currently experimental, but you can use them on your site today by
-taking part in the [origin trial]({{origin_trial.url}}).
 
 See Portals in action:
 
@@ -59,7 +56,7 @@ but unlike an `<iframe>`,
 they also come with features to navigate to their content.
 
 Seeing is believing:
-please first check out what we showcased at Chrome Dev Summit last year:
+please first check out what we showcased at Chrome Dev Summit in 2019:
 
 {% YouTube 'Ai4aZ9Jbsys', '1081' %}
 
@@ -68,37 +65,12 @@ until the browser finishes rendering the destination.
 With Portals, users get to experience an animation,
 while the `<portal>` pre-renders content and creates a seamless navigation experience.
 
-Before Portals, we could have rendered another page using an `<iframe>`. We could also have added animations to move the frame around the page. But an `<iframe>` won't let you navigate into its content. Portals close this gap, enabling interesting use cases.
-
-## Try out Portals
-
-### Enabling support during the origin trial phase
-
-Portals will be available an origin trial in Chrome 85. The origin trial is
-expected to end in Chrome 86.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
-### Enabling via chrome://flags {: #enable-flags }
-
-Try out Portals in Chrome 85 or 86 by flipping an experimental flag:
-`chrome://flags/#enable-portals`.
-During this early phase of the Portals experiment,
-we also recommend using a completely separate user data directory for your tests
-by setting the
-[`--user-data-dir`](https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md#command-line)
-command line flag.
-Once Portals are enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
-
-<img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">
+Before Portals, you could have rendered another page using an `<iframe>`. You could also have added animations to move the frame around the page. But an `<iframe>` won't let you navigate into its content. Portals close this gap, enabling interesting use cases.
 
 ## Implement Portals
 
-Let's walk through a basic implementation example.
+Let's walk through a basic implementation example. For this you'll need Chrome
+87 or later.
 
 ```javascript
 // Create a portal with the wikipedia page, and embed it
@@ -188,7 +160,7 @@ if ('HTMLPortalElement' in window) {
 
 If you want to quickly experience what Portals feel like, try using
 [uskay-portals-demo.glitch.me](https://uskay-portals-demo.glitch.me).
-Be sure you access it with Chrome 85 or 86 and turn on the [experimental flag](#enable-flags)!
+Be sure you access it with Chrome 87 or later.
 
 1. Enter a URL you want to preview.
 1. The page will then be embedded as a `<portal>` element.
@@ -205,9 +177,22 @@ To quickly get up to speed, take a look at some of the
 [key scenarios](https://github.com/WICG/portals/blob/master/key-scenarios.md).
 These are the three important features to familiarize yourself with:
 
-- [The `<portal>` element:](https://wicg.github.io/portals/#the-portal-element) The HTML element itself. The API is very simple. It consists of the `src` attribute, the `activate` function and an interface for messaging (`postMessage`). `activate` takes an optional argument to pass data to the `<portal>` upon activation.
-- [The `portalHost` interface:](https://wicg.github.io/portals/#the-portalhost-interface) Adds a `portalHost` object to the `window` object. This lets you check if the page is embedded as a `<portal>` element. It also provides an interface for messaging (`postMessage`) back to the host.
-- [The PortalActivateEvent interface:](https://wicg.github.io/portals/#the-portalactivateevent-interface) An event that fires when the `<portal>` is activated. There is a neat function called `adoptPredecessor` which you can use to retrieve the previous page as a `<portal>` element. This allows you to create seamless navigations and composed experiences between two pages.
+- [The `<portal>` element:](https://wicg.github.io/portals/#the-portal-element)
+  The HTML element itself. The API is very simple. It consists of the `src`
+  attribute, the `activate()` function and an interface for messaging
+  (`postMessage()`). `activate()` takes an optional argument to pass data to the
+  `<portal>` upon activation.
+- [The `portalHost`
+  interface:](https://wicg.github.io/portals/#the-portalhost-interface) Adds a
+  `portalHost` object to the `window` object. This lets you check if the page is
+  embedded as a `<portal>` element. It also provides an interface for messaging
+  (`postMessage()`) back to the host.
+- [The PortalActivateEvent
+  interface:](https://wicg.github.io/portals/#the-portalactivateevent-interface)
+  An event that fires when the `<portal>` is activated. There is a neat function
+  called `adoptPredecessor()` which you can use to retrieve the previous page as
+  a `<portal>` element. This allows you to create seamless navigations and
+  composed experiences between two pages.
 
 Let's look beyond the basic usage pattern. Here is a non-exhaustive list of what you can achieve with Portals along with sample code.
 
@@ -227,21 +212,21 @@ if (window.portalHost) {
 const portal = document.querySelector('portal');
 portal.postMessage({someKey: someValue}, ORIGIN);
 
-// Receive message via window.portalHost
+// Receive messages via window.portalHost
 window.portalHost.addEventListener('message', (evt) => {
   const data = evt.data.someKey;
   // handle the event
 });
 ```
 
-### Activating the `<portal>` element and receiving the `portalactivate` event
+### Activating the <portal> element and receiving the portalactivate event
 
 ```javascript
 // You can optionally add data to the argument of the activate function
 portal.activate({data: {somekey: 'somevalue'}});
 
 // The portal content will receive the portalactivate event
-// when the activate happens
+// when the activation happens
 window.addEventListener('portalactivate', (evt) => {
   // Data available as evt.data
   const data = evt.data;
@@ -262,9 +247,9 @@ window.addEventListener('portalactivate', (evt) => {
 ### Knowing your page was adopted as a predecessor
 
 ```javascript
-// The activate function returns a Promise.
+// The activate() function returns a Promise.
 // When the promise resolves, it means that the portal has been activated.
-// If this document was adopted by it, then window.portalHost will exist.
+// If this document has adopted by it, then window.portalHost will exist.
 portal.activate().then(() => {
   // Check if this document was adopted into a portal element.
   if (window.portalHost) {
@@ -298,4 +283,7 @@ Another important thing to know is that Portals can be used in cross-origin navi
 
 ## Feedback welcome
 
-Portals are ready for experimentation in Chrome 85 and 86 and via the [origin trial]({{origin_trial.url}}). Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+Portals are ready for use in Chrome 87 or later. Feedback from the community is
+crucial to the design of new APIs, so please try it out and tell us what you
+think! If you have any feature requests or feedback, please head over to the
+[WICG GitHub repo](https://github.com/WICG/portals/issues).
