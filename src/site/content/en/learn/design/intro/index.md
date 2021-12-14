@@ -28,11 +28,11 @@ most monitors had screen dimensions of 640 pixels wide by 480 pixels tall.
 These were convex cathode ray tubes, 
 not like the flat liquid crystal displays we have now.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/0a8vHe4LgChVZvaZQfYs.png", 
 alt="The Microsoft website with two simple columns of text plus a navbar.", 
 width="640", height="480" %}
-  <figcaption class="w-figcaption">The Microsoft website in the late 90s designed for a width of 640 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
+  <figcaption>The Microsoft website in the late 90s designed for a width of 640 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
 In the formative days of early web design, 
@@ -42,17 +42,17 @@ screens were getting bigger (and eventually, flatter).
 Before long, most screens had dimensions of 800 by 600 pixels. 
 Web designs changed accordingly. Designers and developers started assuming that 800 pixels was a safe default.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/C88van0yWyvbz5l746pB.png", alt="The Microsoft website using a three-column, mostly text-based design.", width="800", height="600" %}
-<figcaption class="w-figcaption">The Microsoft website in the learly 2000s designed for a width of 800 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
+<figcaption>The Microsoft website in the learly 2000s designed for a width of 800 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
 Then the screens got bigger again. 1024 by 768 became the default. 
 It felt like an arms race between web designers and hardware manufacturers.
 
-​​<figure class="w-figure">
+​​<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/nuHSqBVgInTvLti73Qz2.png", alt="The Microsoft website with a more complex design using images as well as text.", width="800", height="600" %}
-<figcaption class="w-figcaption">The Microsoft website in the mid 2000s designed for a width of 1024 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
+<figcaption>The Microsoft website in the mid 2000s designed for a width of 1024 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
 Whether it was 640, 800, or 1024 pixels, 
@@ -64,18 +64,18 @@ If a visitor to your site has a wider screen than the width you have chosen, the
 You can center the content of your pages to distribute that space more evenly 
 (instead of having empty space on one side) but you still wouldn't be taking full advantage of the available space.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/t0Zd1eGEJeeqMO8ItsqK.png", alt="A narrow layour with a lot of white space around it.", width="800", height="320" %}
-<figcaption class="w-figcaption">The Yahoo website from the early 2000s as experienced in a browser that's wider than the site's 800 pixel wide design. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
+<figcaption>The Yahoo website from the early 2000s as experienced in a browser that's wider than the site's 800 pixel wide design. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
 Similarly, if a visitor arrives with a narrower screen than the width you've chosen, 
 then your content won't fit horizontally. 
 The browser generates a crawlbar—the horizontal equivalent of a scrollbar—and the user has to move the whole page left and right to see all the content.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/bnh7fDiGjFhdBHTD5CJ8.png", alt="A website that appears cut-off to the right due to being too wide for the viewport.", width="420", height="640" %}
-<figcaption class="w-figcaption">The Yahoo website from the early 2000s as experienced in a browser that's narrower than the site's 800 pixel wide design. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
+<figcaption>The Yahoo website from the early 2000s as experienced in a browser that's narrower than the site's 800 pixel wide design. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
 {% Codepen {
@@ -97,14 +97,14 @@ But while a liquid layout will look good across a wide range of widths, it will 
 On a wide screen the layout looks stretched. 
 On a narrow screen the layout looks squashed. Both scenarios aren't ideal.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/oBAbgP2JCt2zVENHVCnc.png", alt="A layout that is squashed into a narrow window.", width="420", height="640" %}
-<figcaption class="w-figcaption">Wikipedia's liquid layout from the mid 2000s as experienced in a narrow browser window. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
+<figcaption>Wikipedia's liquid layout from the mid 2000s as experienced in a narrow browser window. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 ​​
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/zRBSmS1xCgYPTueUBMd9.png", alt="A layout stretched horizontally with very long line lengths.", width="800", height="320" %}
-<figcaption class="w-figcaption">Wikipedia's liquid layout from the mid 2000s as experienced in a wide browser window. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
+<figcaption>Wikipedia's liquid layout from the mid 2000s as experienced in a wide browser window. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
 You can mitigate these problems by using `min-width` and `max-width` for your layout. 
@@ -112,7 +112,7 @@ But then at any size below the minimum width or above the maximum width you've g
 On a wide screen there'd be unused space going to waste. 
 On a narrow screen, the user would have to move the whole page left and right to see everything.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
  user: 'web-dot-dev',
  id: 'YzxEzpE',
@@ -121,7 +121,7 @@ On a narrow screen, the user would have to move the whole page left and right to
  tab: 'result'
 } %}
 
-<figcaption class="w-figcaption">Open <a href="https://codepen.io/web-dot-dev/pen/YzxEzpE">the liquid layout example</a> 
+<figcaption>Open <a href="https://codepen.io/web-dot-dev/pen/YzxEzpE">the liquid layout example</a> 
 in a new browser window to see how changing the size of the window stretches the design.</figcaption>
 </figure>
 
@@ -164,7 +164,7 @@ The problem of excess space persisted although it wasn't as bad as in a fixed-wi
 Using CSS media queries, you can give people the layout that's closest to their browser width. 
 But given the variety of device sizes, chances are the layout will look less than perfect for most people.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
  user: 'web-dot-dev',
  id: 'oNeoNYw',
@@ -172,7 +172,7 @@ But given the variety of device sizes, chances are the layout will look less tha
  theme: 'dark',
  tab: 'result'
 } %}
-<figcaption class="w-figcaption">Open <a href="https://codepen.io/web-dot-dev/pen/oNeoNYw">the adaptive layout example</a> 
+<figcaption>Open <a href="https://codepen.io/web-dot-dev/pen/oNeoNYw">the adaptive layout example</a> 
 in a new browser window to see how changing the size of the window causes the design to jump between layouts.</figcaption>
 </figure>
 
@@ -180,7 +180,7 @@ in a new browser window to see how changing the size of the window causes the de
 
 If adaptive layouts are a mashup of media queries and fixed-width layouts, responsive web design is a mashup of media queries and liquid layouts.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
  user: 'web-dot-dev',
  id: 'JjyOjbE',
@@ -188,7 +188,7 @@ If adaptive layouts are a mashup of media queries and fixed-width layouts, respo
  theme: 'dark',
  tab: 'result'
 } %}
-<figcaption class="w-figcaption">Open <a href="https://codepen.io/web-dot-dev/pen/JjyOjbE">the responsive design example</a> 
+<figcaption>Open <a href="https://codepen.io/web-dot-dev/pen/JjyOjbE">the responsive design example</a> 
 in a new browser window to see how changing the size of the window causes the design to fluidly change layout.</figcaption>
 </figure>
 
@@ -225,9 +225,9 @@ The second value is `initial-scale=1`.
 This tells the browser how much or how little scaling to do. 
 With a responsive design, you don't want the browser to do any scaling at all.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/HahSW2IXIkGux7cMCMpE.png", alt="Images of two mobile phones containing text, one appearing zoomed out due to not having the meta tag in place.", width="800", height="748" %}
-  <figcaption class="w-figcaption">The phone on the left shows how the layout looks before the meta tag is in place, when compared to the layout on the right.</figcaption>
+  <figcaption>The phone on the left shows how the layout looks before the meta tag is in place, when compared to the layout on the right.</figcaption>
 </figure>
 
 With that `meta` element in place, your web pages are ready to be responsive.

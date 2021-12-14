@@ -46,7 +46,7 @@ function CodelabCallout(slugs, lang) {
   if (isDesignSystemContext(this.page.filePathStem)) {
     return `
       <aside class="callout bg-quaternary-box-bg color-quaternary-box-text">
-        <div class="repel">
+        <div class="auto-grid">
           <div class="callout__content flow">
             <div class="callout__branding cluster gutter-base">
               <!-- icons/code.svg -->

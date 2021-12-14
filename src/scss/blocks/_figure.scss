@@ -28,6 +28,12 @@ iframe {
   > * {
     width: 100%;
   }
+
+  img {
+    margin: auto;
+    max-width: 100%;
+    width: inherit;
+  }
 }
 
 figcaption {
