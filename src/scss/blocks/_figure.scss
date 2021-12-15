@@ -2,8 +2,9 @@
 /// https://web.dev/design-system/component/figure
 figure {
   border: 1px solid var(--color-stroke);
-  padding: 1em;
   border-radius: $global-radius-base;
+  display: inline-block;
+  padding: 1em;
 }
 
 figure[data-float] {
@@ -21,10 +22,9 @@ figure[data-float="right"] {
   margin-inline-start: get-space('size-1');
 }
 
-/// Keeps figures and embeds at a reasonable size and
-/// makes sure their content fills them
-figure,
-iframe {
+figure[data-size="full"] {
+  display: block;
+
   > * {
     width: 100%;
   }
