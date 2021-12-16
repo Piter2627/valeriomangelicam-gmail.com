@@ -20,9 +20,9 @@ tags:
   - blog
 ---
 
-<figure class="w-figure">
+<figure data-size="full">
   {% YouTube "kcvfyQh6J-0" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     (If you prefer watching over reading, this article is also available as a <a href="https://youtu.be/kcvfyQh6J-0">video</a>.)
   </figcaption>
 </figure>

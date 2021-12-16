@@ -5,6 +5,11 @@ figure {
   border-radius: $global-radius-base;
   display: inline-block;
   padding: 1em;
+
+  > :not(figcaption) {
+    display: block;
+    margin: auto;
+  }
 }
 
 figure[data-float] {
@@ -12,24 +17,20 @@ figure[data-float] {
   margin-bottom: get-space('size-1');
 }
 
-figure[data-float="left"] {
+figure[data-float='left'] {
   float: left;
   margin-inline-end: get-space('size-1');
 }
 
-figure[data-float="right"] {
+figure[data-float='right'] {
   float: right;
   margin-inline-start: get-space('size-1');
 }
 
-figure[data-size="full"] {
+figure[data-size='full'] {
   display: block;
 
   > * {
     width: 100%;
   }
-}
-
-figcaption {
-  max-width: 60ch;
 }
